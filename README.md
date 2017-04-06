@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/tomgrohl/laravel-memory-auth-provider/v/stable)](https://packagist.org/packages/tomgrohl/laravel-memory-auth-provider)
+[![Latest Unstable Version](https://poser.pugx.org/tomgrohl/laravel-memory-auth-provider/v/unstable)](https://packagist.org/packages/tomgrohl/laravel-memory-auth-provider)
+[![License](https://poser.pugx.org/tomgrohl/laravel-memory-auth-provider/license)](https://packagist.org/packages/tomgrohl/laravel-memory-auth-provider)
+
 # Laravel Memory Auth Provider
 
 A In Memory User Auth Provider for Laravel 5.1+.
