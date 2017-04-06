@@ -19,10 +19,16 @@ class InMemoryUserProvider implements BaseUserProvider
      */
     protected $hasher;
 
-    public function __construct(HasherContract $hasher, array $users)
+    /**
+     * @var string
+     */
+    protected $model;
+
+    public function __construct(HasherContract $hasher, array $users, $model = 'Illuminate\Auth\GenericUser')
     {
         $this->hasher = $hasher;
         $this->users = $users;
+        $this->model = $model;
     }
 
     /**
@@ -115,6 +121,15 @@ class InMemoryUserProvider implements BaseUserProvider
     protected function getGenericUser($username, array $fields = [])
     {
         $fields['username'] = $username;
-        return new GenericUser($fields);
+        $model = $this->getUserClass();
+        return new $model($fields);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getUserClass()
+    {
+        return $this->model;
     }
 }

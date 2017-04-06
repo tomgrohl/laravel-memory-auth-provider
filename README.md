@@ -52,6 +52,7 @@ Add also setup your in memory users:
 
 ```
     'memory' => [
+        'model' => 'Illuminate\Auth\GenericUser',
         'users' => [
     
             'admin' => [
