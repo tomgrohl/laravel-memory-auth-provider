@@ -69,3 +69,9 @@ Add also setup your in memory users:
 ```
 
 You can add any properties you want making it easy to switch out the Auth drivers.
+
+The package comes with a command for hashing passwords, making it easier to setup passwords, just run the following command to hash your password:
+
+```
+php artisan tomgrohl:hash:password mypassword
+```
