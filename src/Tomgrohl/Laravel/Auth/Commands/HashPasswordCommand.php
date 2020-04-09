@@ -5,7 +5,7 @@ namespace Tomgrohl\Laravel\Auth\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Hashing\Hasher;
 
-class Hash extends Command
+class HashPasswordCommand extends Command
 {
     /**
      * The name and signature of the console command.
@@ -41,11 +41,8 @@ class Hash extends Command
     {
         $password = $this->argument('password');
 
-        $this->output->newLine(1);
         $this->output->writeln($this->hasher->make($password));
-        $this->output->newLine(1);
 
         return 0;
     }
 }
-

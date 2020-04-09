@@ -4,15 +4,15 @@ namespace Tomgrohl\Laravel\Auth\Tests;
 
 use Illuminate\Auth\GenericUser;
 use Illuminate\Contracts\Hashing\Hasher;
-use PHPUnit_Framework_TestCase;
 use Tomgrohl\Laravel\Auth\InMemoryUserProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class InMemoryUserProviderTest
  *
  * @package Tomgrohl\Laravel\Auth\Tests
  */
-class InMemoryUserProviderTest extends PHPUnit_Framework_TestCase
+class InMemoryUserProviderTest extends TestCase
 {
     public function testProviderRetrieveById()
     {

@@ -10,11 +10,9 @@
 		"process-timeout": 10000,
 		"github-protocols": ["https"]
 	},
-	"require": {
-		"laravel/laravel": "^5.1"
-	},
 	"require-dev": {
-		"phpunit/phpunit": "~4.0|~5.7"
+		"laravel/laravel": "^6.1|7.0",
+        "phpunit/phpunit": "^7.5|^8.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -23,7 +21,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "1.0-dev"
+			"dev-master": "2.0-dev"
 		}
 	}
 }

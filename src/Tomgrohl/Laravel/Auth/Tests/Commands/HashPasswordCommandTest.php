@@ -4,21 +4,21 @@ namespace Tomgrohl\Laravel\Auth\Tests\Commands;
 
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Events\Dispatcher;
-use PHPUnit_Framework_TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 use Illuminate\Foundation\Application;
 use Illuminate\Console\Application as ConsoleApplication;
-use Tomgrohl\Laravel\Auth\Commands\Hash;
+use Tomgrohl\Laravel\Auth\Commands\HashPasswordCommand;
+use PHPUnit\Framework\TestCase;
 
-class HashTest extends PHPUnit_Framework_TestCase
+class HashPasswordCommandTest extends TestCase
 {
     public function testCommand()
     {
         $hasher = $this->createMock('Illuminate\Contracts\Hashing\Hasher');
 
         $container = new Application();
-        $container->bind('hash', function() use($hasher) {
+        $container->bind('hash.driver', function() use($hasher) {
             return $hasher;
         });
 
@@ -27,7 +27,7 @@ class HashTest extends PHPUnit_Framework_TestCase
             ->will($this->returnValue('dfsfsfsdfsdfsf'))
         ;
 
-        $command = new Hash($hasher);
+        $command = new HashPasswordCommand($hasher);
         $commandTest = $this->getCommandTester($command, $container);
 
         $commandTest->execute(['command' => $command->getName(), 'password' => 'mypassword']);

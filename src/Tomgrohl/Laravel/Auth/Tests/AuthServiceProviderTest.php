@@ -4,15 +4,15 @@ namespace Tomgrohl\Laravel\Auth\Tests;
 
 use Illuminate\Auth\AuthManager;
 use Illuminate\Foundation\Application;
-use PHPUnit_Framework_TestCase;
 use Tomgrohl\Laravel\Auth\AuthServiceProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class AuthServiceProviderTest
  *
  * @package Tomgrohl\Laravel\Auth\Tests
  */
-class AuthServiceProviderTest extends PHPUnit_Framework_TestCase
+class AuthServiceProviderTest extends TestCase
 {
     public function testProvider()
     {

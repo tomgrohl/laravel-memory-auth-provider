@@ -6,7 +6,7 @@ use Illuminate\Config\Repository;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use Tomgrohl\Laravel\Auth\Commands\Hash;
+use Tomgrohl\Laravel\Auth\Commands\HashPasswordCommand;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -28,12 +28,12 @@ class AuthServiceProvider extends ServiceProvider
             );
         });
 
-        $this->app->bind('Tomgrohl\Laravel\Auth\Commands\Hash', function(Application $app) {
-            return new Hash($app->make('hash'));
+        $this->app->bind(HashPasswordCommand::class, function(Application $app) {
+            return new HashPasswordCommand($app->make('hash'));
         });
 
         $this->commands([
-            'Tomgrohl\Laravel\Auth\Commands\Hash'
+            HashPasswordCommand::class
         ]);
     }
 }
