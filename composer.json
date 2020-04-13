@@ -16,7 +16,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Tomgrohl\\Laravel\\Auth\\": "src/Tomgrohl/Laravel/Auth/"
+			"Tomgrohl\\Laravel\\Auth\\": "src/"
 		}
 	},
 	"extra": {

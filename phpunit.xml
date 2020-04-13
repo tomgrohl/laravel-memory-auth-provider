@@ -11,13 +11,13 @@
 >
     <testsuites>
         <testsuite name="InMemory Test Suite">
-            <directory suffix="Test.php">./src/Tomgrohl/Laravel/*/Tests</directory>
+            <directory suffix="Test.php">./src/Tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>./src/Tomgrohl/</directory>
+            <directory>./src/</directory>
             <exclude>
                 <directory>./vendor</directory>
             </exclude>
